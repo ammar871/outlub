@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/draw"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="right">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/toggles"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="4dp"
+                    android:src="@drawable/ic_baseline_menu_24" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/homefont"
+                        android:text="التوصيل الى  "
+                        android:textColor="#AD000000"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/tv_titlbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                        android:fontFamily="@font/homefont"
+                        android:text="نادى الاعلامين المقطم شارع الاهرام  "
+                        android:textColor="@color/colorehome"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/image_search"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+
+
+                    app:srcCompat="@drawable/ic_baseline_search_24"
+                    tools:ignore="VectorDrawableCompat" />
+
+
+            </RelativeLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:fillViewport="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appbar">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/_10sdp">
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:fontFamily="@font/homefont"
+                        android:text="ماذا تريد أن تطلب ,   "
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_20ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="DuplicateIds" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_catogray"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/title_layout_again"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        app:layout_constraintTop_toBottomOf="@id/rv_catogray"
+                        >
+
+                        <TextView
+                            android:id="@+id/tv_orderagain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                           app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:fontFamily="@font/homefont"
+                            android:text="اطلب مرة اخرى "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_20ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintRight_toRightOf="parent"
+                            tools:ignore="DuplicateIds" />
+
+                        <ImageView
+                            android:id="@+id/image_back_again"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                         android:layout_marginLeft="@dimen/_15sdp"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+                            tools:ignore="VectorDrawableCompat" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_orders"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@id/title_layout_again">
+                    </androidx.recyclerview.widget.RecyclerView>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_viewpager"
+                        app:layout_constraintTop_toBottomOf="@id/rv_orders"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.viewpager.widget.ViewPager
+                            android:id="@+id/viewPager"
+                            android:layout_width="match_parent"
+                            android:layout_height="130dp"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="MissingConstraints" />
+
+                        <LinearLayout
+
+                            android:id="@+id/sliderDots"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:orientation="horizontal"
+                            app:layout_constraintTop_toBottomOf="@id/viewPager">
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        app:layout_constraintTop_toBottomOf="@id/layout_viewpager"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:id="@+id/layout_viewpager2"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/tv_orderagaina"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:fontFamily="@font/homefont"
+                            android:text="سوبر ماركت  "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_18ssp"
+
+                            app:layout_constraintRight_toRightOf="parent"
+                            tools:ignore="DuplicateIds" />
+                        <androidx.viewpager.widget.ViewPager
+
+                            android:id="@+id/viewPager2"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_220sdp"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_orderagaina"
+                            tools:ignore="MissingConstraints" />
+
+
+
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        app:layout_constraintTop_toBottomOf="@id/layout_viewpager2"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:id="@+id/layout_viewpager3"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/tv_orderagaina3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:fontFamily="@font/homefont"
+                            android:text="جديد على طلبات "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_18ssp"
+
+                            app:layout_constraintRight_toRightOf="parent"
+                            tools:ignore="DuplicateIds" />
+                        <androidx.viewpager.widget.ViewPager
+
+                            android:id="@+id/viewPager3"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_220sdp"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_orderagaina3"
+                            tools:ignore="MissingConstraints" />
+
+
+
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        app:layout_constraintTop_toBottomOf="@id/layout_viewpager3"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:id="@+id/layout_viewpager4"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/tv_orderagaina2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:fontFamily="@font/homefont"
+                            android:text="خيارات ستنال اعجابك  "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_18ssp"
+
+                            app:layout_constraintRight_toRightOf="parent"
+                            tools:ignore="DuplicateIds" />
+                        <androidx.viewpager.widget.ViewPager
+
+                            android:id="@+id/viewPager4"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_220sdp"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_orderagaina2"
+                            tools:ignore="MissingConstraints" />
+
+
+
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/layout_viewpager4"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                    android:fontFamily="@font/homefont"
+                    android:includeFontPadding="false"
+                        android:backgroundTint="@color/colorehome"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_20ssp"
+                        android:layout_marginLeft="@dimen/_20ssp"
+                        android:text="عرض جميع المطاعم "
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14ssp"
+                        android:padding="@dimen/_6sdp"
+                        app:cornerRadius="@dimen/_8sdp"
+                        android:id="@+id/btn_show_all"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.navigation.NavigationView
+
+            android:id="@+id/nav"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            app:itemIconTint="@color/colorehome"
+            app:itemTextColor="@color/white"
+
+            >
+
+
+            <include layout="@layout/layout_menu" />
+        </com.google.android.material.navigation.NavigationView>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>
+
+
+

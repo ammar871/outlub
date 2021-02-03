@@ -1,0 +1,24 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=79:09:7B:D6:87:E6:83:DF:58:37:FB:A4:E0:4E:D4:37:65:AB:F8:E9%3Bcom.taskesnoad.outlub.activites
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    com.taskesnoad.outlub.activites
+
+    SHA-1 certificate fingerprint:
+    79:09:7B:D6:87:E6:83:DF:58:37:FB:A4:E0:4E:D4:37:65:AB:F8:E9
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBug8VUx_FM2X_vx-IbX88utRAazFZz-os</string>
+</resources>
